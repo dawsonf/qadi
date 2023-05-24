@@ -6,12 +6,11 @@
   <header>
     <div class="wrapper">
       <div id="nav">
-
         <router-link to="/">Home</router-link> | 
         <router-link to="/about">About</router-link>
       </div> 
       <div>
-        <TitleCard title="QADI" msg="Blah, blah" />
+        <TitleCard title="The QADI App" msg="Complete a QADI review and share the scores with your team." />
       </div>
     </div>
   </header>
