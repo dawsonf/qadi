@@ -36,44 +36,45 @@ import { FormKitIcon } from '@formkit/vue'
               type="text"
               v-model="item.name"
             />
-          </div>
-          <div class="box">
-            <FormKit 
-              type="number"
-              help="Quality (Max 40%)"
-              step="1"
-              v-model="item.quality"
-              max="40"
-              min="0"
-              prefix-icon="check"
-            />
-            <FormKit 
-              type="number"
-              help="Attitude (Max 10%)"
-              step="1"
-              v-model="item.attitude"
-              max="10"
-              min="0"
-              prefix-icon="happy"
-            />
-            <FormKit 
-              type="number"
-              help="Deadline (Max 40%)"
-              step="1"
-              v-model="item.deadline"
-              max="40"
-              min="0"
-              prefix-icon="month"
-            />
-            <FormKit 
-              type="number"
-              help="Innovation (Max 10%)"
-              step="1"
-              v-model="item.innovation"
-              max="10"
-              min="0"
-              prefix-icon="color"
-            />
+            <div class="qadi-container">
+              
+              <div class="qadi"><FormKit 
+                type="number"
+                help="Quality (Max 40%)"
+                step="1"
+                v-model="item.quality"
+                max="40"
+                min="0"
+                prefix-icon="check"
+              /></div>
+              <div class="qadi"><FormKit 
+                type="number"
+                help="Attitude (Max 10%)"
+                step="1"
+                v-model="item.attitude"
+                max="10"
+                min="0"
+                prefix-icon="happy"
+              /></div>
+              <div class="qadi"><FormKit 
+                type="number"
+                help="Deadline (Max 40%)"
+                step="1"
+                v-model="item.deadline"
+                max="40"
+                min="0"
+                prefix-icon="month"
+              /></div>
+              <div class="qadi"><FormKit 
+                type="number"
+                help="Innovation (Max 10%)"
+                step="1"
+                v-model="item.innovation"
+                max="10"
+                min="0"
+                prefix-icon="color"
+              /></div>
+            </div>
           </div>
           <div class="box">
             <div class="button-container">
@@ -325,12 +326,23 @@ header {
   border-radius: 5px;
 }
 
-.button-container{
+.button-container {
      height:100%;
      display: flex;
      flex-direction: column;
      align-items: center;
      /* justify-content: center */
+    }
+
+.qadi-container{
+     display: flex;
+     flex-wrap:wrap;
+     /* align-items: center; */
+     /* justify-content: center */
+    }
+
+.qadi {
+  padding: 2px;
     }
 
 .button{
