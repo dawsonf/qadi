@@ -1,4 +1,4 @@
-# rtc
+# QADI Form App
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -26,9 +26,4 @@ npm run dev
 
 ```sh
 npm run build
-```
-
-
-```json
-{"version":1,"end_time_name":"Boarding Time","steps":[{"id":1,"name":"Check In","minutes":"30"},{"id":2,"name":"Arrive at Airport","minutes":"6"},{"id":3,"name":"Leave House","minutes":15},{"id":4,"name":"Wake Up","minutes":90}],"endTime":"2023-05-19T10:43"}
 ```
