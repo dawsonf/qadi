@@ -1,0 +1,24 @@
+{
+  "name": "rtc",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@formkit/icons": "^0.17.2",
+    "@formkit/themes": "^1.0.0-beta.10",
+    "@formkit/vue": "^1.0.0-beta.10",
+    "@vuepic/vue-datepicker": "^3.4.8",
+    "base64url": "^3.0.1",
+    "js-base64": "^3.7.5",
+    "pako": "^2.1.0",
+    "vue": "^3.2.38",
+    "vue-router": "^4.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite": "^3.1.8"
+  }
+}

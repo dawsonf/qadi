@@ -1,0 +1,11 @@
+**/.git
+**/.github
+**/.vs
+.dockerignore
+azure-pipelines.yml
+*.md
+dist
+media
+node_modules
+.gitignore
+*.cmd
