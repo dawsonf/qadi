@@ -12,7 +12,7 @@ import { FormKitIcon } from '@formkit/vue'
     
       <div class="steps-container">
 
-        <div class="start-container">
+        <div class="step-container">
           <div class="box" style="min-width: 50%;">
             <FormKit 
               type="text"
