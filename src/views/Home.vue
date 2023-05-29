@@ -88,16 +88,31 @@ import { FormKitIcon } from '@formkit/vue'
 
         <div class="start-container">
           <div class="box">
-            <div class="button-container">
               <FormKit
                 type="button"
                 label="Add Item"
-                help="Add a new item to the end of the list."
                 prefix-icon="add"
                 @click="addItem(999);"
               />
-            </div>
           </div>
+          <div class="box">
+              <FormKit
+                type="button"
+                label="Copy as JSON"
+                prefix-icon="fileDoc"
+                @click="copyToClipBoardJSON();"
+              />
+          </div>
+          <div class="box">
+              <FormKit
+                type="button"
+                label="Copy as TSV"
+                prefix-icon="list"
+                @click="copyToClipBoardTSV();"
+              />
+          </div>
+          
+          
         </div>
 
 
@@ -287,6 +302,17 @@ import { FormKitIcon } from '@formkit/vue'
         //console.log ("RTC encoded", JSON.stringify(this.qadi), encoded, result, encodeURIComponent(result));
         //this.$router.push('/' + encodeURIComponent(result));
         this.$router.push({name: 'home', params: {i : encodeURIComponent(result)}});
+      },
+      copyToClipBoardJSON() {
+        let text = JSON.stringify(this.qadi);
+        navigator.clipboard.writeText(text);
+      },
+      copyToClipBoardTSV() {
+        let text = "";
+        this.qadi.steps.forEach((item, index) => {
+          text += (index + 1) +  '\t' + this.qadi.title + '\t' + this.qadi.name + '\t' + item.name + '\t' + item.quality + '\t' + item.attitude + '\t' + item.deadline + '\t' + item.innovation + '\n'
+        })
+        navigator.clipboard.writeText(text);
       }
     }
   }
