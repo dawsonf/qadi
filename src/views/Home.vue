@@ -203,8 +203,12 @@ import { FormKitIcon } from '@formkit/vue'
         console.log ("Decoded RTC", text);
         this.skip = true;
         this.qadi = JSON.parse(text);
+        this.qadi.ref = this.qadi.ref || "";
+        this.qadi.date = this.qadi.date || (new Date()).toISOString().substring(0,10);
     } else if(localStorage.qadi) {
         this.qadi = JSON.parse(localStorage.qadi);
+        this.qadi.ref = this.qadi.ref || "";
+        this.qadi.date = this.qadi.date || (new Date()).toISOString().substring(0,10);
     } else {
       this.qadi = {
         version: 1,
