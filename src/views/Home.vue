@@ -12,15 +12,34 @@ import { FormKitIcon } from '@formkit/vue'
     
       <div class="steps-container">
 
-        <div class="step-container">
-          <div class="box" style="min-width: 50%;">
+        <div class="start-container">
+
+          <div class="box">
+            <FormKit
+              type="date"
+              name="date"
+              label="Date"
+              validation="required|after"
+              validation-visibility="live"
+              v-model="qadi.date"
+              prefix-icon="month"
+            />
+          </div>
+          <div class="box">
+            <FormKit 
+              type="text"
+              v-model="qadi.ref"
+              label="Reference"
+            />
+          </div>
+          <div class="box">
             <FormKit 
               type="text"
               v-model="qadi.title"
               label="Project"
             />
           </div>
-          <div class="box" style="min-width: 50%;">
+          <div class="box">
             <FormKit 
               type="text"
               v-model="qadi.name"
@@ -86,7 +105,7 @@ import { FormKitIcon } from '@formkit/vue'
           </div>
         </div>
 
-        <div class="start-container">
+        <div class="end-container">
           <div class="box">
               <FormKit
                 type="button"
@@ -132,7 +151,7 @@ import { FormKitIcon } from '@formkit/vue'
       return {
         //endTimeName: "Target date and time",
         //endTime: (new Date()).toISOString().substring(0,16),
-        qadi: { version: 1, title : "Some QADI",  name: "My name is...", steps: [] },
+        qadi: { version: 1, date: (new Date()).toISOString().substring(0,10), ref: "", title : "Some QADI",  name: "My name is...", steps: [] },
         skip: false
       }
     },
@@ -191,6 +210,8 @@ import { FormKitIcon } from '@formkit/vue'
         version: 1,
         title : "Some QADI",  
         name: "My name is...",
+        date: (new Date()).toISOString().substring(0,10),
+        ref: "",
         steps: [
           {
             id: 1,
@@ -310,7 +331,7 @@ import { FormKitIcon } from '@formkit/vue'
       copyToClipBoardTSV() {
         let text = "";
         this.qadi.steps.forEach((item, index) => {
-          text += (index + 1) +  '\t' + this.qadi.title + '\t' + this.qadi.name + '\t' + item.name + '\t' + item.quality + '\t' + item.attitude + '\t' + item.deadline + '\t' + item.innovation + '\n'
+          text += (index + 1) +  '\t' + this.qadi.date + '\t' + this.qadi.ref +  '\t' + this.qadi.title + '\t' + this.qadi.name + '\t' + item.name + '\t' + item.quality + '\t' + item.attitude + '\t' + item.deadline + '\t' + item.innovation + '\n'
         })
         navigator.clipboard.writeText(text);
       }
@@ -337,11 +358,21 @@ header {
 .start-container {
   display: flex;
   flex-wrap:wrap;
-  flex-direction: row;
-  padding-bottom: 10px;
-  border-bottom: 0px solid gray;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid rgb(201, 201, 201);
+  margin: 5px;
+  border-radius: 5px;
 }
-
+.end-container {
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  padding: 10px;
+  border: 1px solid rgb(201, 201, 201);
+  margin: 5px;
+  border-radius: 5px;
+}
 .step-container {
   display: flex;
   flex-wrap:nowrap;
